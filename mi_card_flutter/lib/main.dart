@@ -10,17 +10,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: const Color(0xFFa29bfe),
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const CircleAvatar(
+            children: const [
+              CircleAvatar(
                 radius: 50.0,
                 backgroundImage: AssetImage('images/dunlok.jpg'),
               ),
-              const Text(
+              Text(
                 'Sweet Dev',
                 style: TextStyle(
                   fontFamily: 'Pacifico',
@@ -36,56 +37,45 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Source Sans Pro',
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
-                  color: Colors.teal[100],
+                  color: Colors.black,
                   letterSpacing: 2.5,
                 ),
               ),
-              Container(
-                color: Colors.white,
-                padding: const EdgeInsets.all(10.0),
-                margin: const EdgeInsets.symmetric(
-                    vertical: 10.0, horizontal: 25.0),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.add_shopping_cart,
-                      color: Colors.teal,
-                    ),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      '+ 84 916 203 153',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.teal.shade900,
-                          fontFamily: 'Sourcr Sans Pro'),
-                    ),
-                  ],
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  // ! thickness: độ dày
+                  color: Colors.black54,
+                  thickness: 1,
                 ),
               ),
-              Container(
-                color: Colors.white,
-                padding: const EdgeInsets.all(10.0),
-                margin: const EdgeInsets.symmetric(
-                    vertical: 10.0, horizontal: 25.0),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.email,
-                      color: Colors.teal,
-                    ),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      'myloc442@gmail.com',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.teal.shade900,
-                          fontFamily: 'Sourcr Sans Pro'),
-                    ),
-                  ],
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.add_shopping_cart,
+                    color: Color(0xFFa29bfe),
+                  ),
+                  title: Text(
+                    '+ 84 916 203 153',
+                    style: TextStyle(
+                        fontSize: 20.0, fontFamily: 'Sourcr Sans Pro'),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Color(0xFFa29bfe),
+                  ),
+                  title: Text(
+                    'myloc442@gmail.com',
+                    style: TextStyle(
+                        fontSize: 20.0, fontFamily: 'Sourcr Sans Pro'),
+                  ),
                 ),
               ),
             ],
